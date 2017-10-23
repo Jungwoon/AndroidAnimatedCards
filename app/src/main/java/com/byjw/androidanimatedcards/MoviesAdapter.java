@@ -21,14 +21,11 @@ public class MoviesAdapter extends BaseAdapter {
     private Context context;
     private LayoutInflater inflater = null;
 
-
     MoviesAdapter(Context context, String[] list) {
-
         this.context = context;
         DataModel.movies = list;
         inflater = LayoutInflater.from(this.context);
     }
-
 
     @Override
     public int getCount() {
@@ -46,56 +43,50 @@ public class MoviesAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View convertview, ViewGroup viewGroup) {
+    public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder;
-        if(convertview == null) {
 
-            convertview = inflater.inflate(R.layout.card_item_template, null);
+        if(view == null) {
+            view = inflater.inflate(R.layout.card_item_template, null);
             holder = new ViewHolder();
 
-            holder._cover = (ImageView) convertview.findViewById(R.id.img_cover_d);
-            holder._background = (ImageView) convertview.findViewById(R.id.img_background);
-            holder._movies = (TextView) convertview.findViewById(R.id.txt_movie_details);
-            holder._plot = (TextView) convertview.findViewById(R.id.txt_plot_d);
-            holder._releaseDate = (TextView) convertview.findViewById(R.id.txt_release_d);
-            holder._vw_blayer =  convertview.findViewById(R.id.vw_blacklayer);
+            holder.cover = (ImageView) view.findViewById(R.id.img_cover);
+            holder.background = (ImageView) view.findViewById(R.id.img_background);
+            holder.movies = (TextView) view.findViewById(R.id.txt_title_details);
+            holder.description = (TextView) view.findViewById(R.id.txt_movie_description);
+            holder.releaseDate = (TextView) view.findViewById(R.id.txt_release_date);
+            holder.blackLayer =  view.findViewById(R.id.view_black_layer);
 
-            convertview.setTag(holder);
+            view.setTag(holder);
 
         }
         else {
-            holder = (ViewHolder) convertview.getTag();
+            holder = (ViewHolder) view.getTag();
         }
 
+        holder.movies.setText(DataModel.movies[i]);
+        holder.description.setText(DataModel.description[i]);
+        holder.releaseDate.setText(String.format("o %s", DataModel.releaseDate[i]));
+        Glide.with(context).load(DataModel.cover[i]).into(holder.cover);
+        Glide.with(context).load(DataModel.background[i]).into(holder.background);
 
-        holder._movies.setText(DataModel.movies[i]);
-        holder._plot.setText(DataModel.plot[i]);
-        holder._releaseDate.setText(String.format("o %s", DataModel.releaseDate[i]));
-        //holder._cover.setImageResource(cover[i]);
-        Glide.with(context).load(DataModel.cover[i]).into(holder._cover);
-//        Picasso.with(context).load(DataModel.cover[i]).into(holder._cover);
-        // holder._background.setImageResource(background[i]);
-        Glide.with(context).load(DataModel.background[i]).into(holder._background);
-//        Picasso.with(context).load(DataModel.background[i]).into(holder._background);
-
-
-        ObjectAnimator fade = ObjectAnimator.ofFloat(holder._vw_blayer, View.ALPHA, 1f,.3f);
+        ObjectAnimator fade = ObjectAnimator.ofFloat(holder.blackLayer, View.ALPHA, 1f,.3f);
         fade.setDuration(1500);
         fade.setInterpolator(new LinearInterpolator());
         fade.start();
 
 
-        return convertview;
+        return view;
     }
 
-    public class ViewHolder {
+    private class ViewHolder {
 
-        ImageView _cover;
-        ImageView _background;
-        TextView _movies;
-        TextView _plot;
-        TextView _releaseDate;
-        View _vw_blayer;
+        ImageView cover;
+        ImageView background;
+        TextView movies;
+        TextView description;
+        TextView releaseDate;
+        View blackLayer;
 
     }
 }

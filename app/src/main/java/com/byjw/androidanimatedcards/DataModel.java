@@ -6,23 +6,25 @@ package com.byjw.androidanimatedcards;
 
 public class DataModel {
 
-    public static String[] movies = {
+    public static final String BACKGROUND = "background";
+    public static final String COVER = "cover";
+    public static final String TITLE = "title";
+    public static final String DESCRIPTION = "description";
 
+    public static String[] movies = {
             "Leave Company",
             "Geostorm",
             "I am Heath Ledger I am",
             "Kinsman",
             "Windriver"
-
     };
-    public static String[] plot = {
 
+    public static String[] description = {
             "It's been nearly two years since Superman's (Henry Cavill) colossal battle with Zod (Michael Shannon) devastated the city of Metropolis.",
             "Political pressure mounts to install a system of accountability when the actions of the Avengers lead to collateral damage. The new status quo deeply divides members of the team.",
             "Worshiped as a god since the dawn of civilization, the immortal Apocalypse (Oscar Isaac) becomes the first and most powerful mutant. Awakening after thousands of years",
             "Raised by a family of wolves since birth, Mowgli (Neel Sethi) must leave the only home he's ever known when the fearsome tiger Shere Khan (Idris Elba) unleashes his mighty roar",
             "When Tony Stark (Robert Downey Jr.) jump-starts a dormant peacekeeping program, things go terribly awry, forcing him, Thor (Chris Hemsworth), the Incredible Hulk (Mark Ruffalo) and the rest of the Avengers to reassemble."
-
     };
 
     public static String[] releaseDate = {
@@ -40,7 +42,6 @@ public class DataModel {
             R.drawable.iam,
             R.drawable.kingsman,
             R.drawable.windriver
-
     };
 
     public static int background[] = {
