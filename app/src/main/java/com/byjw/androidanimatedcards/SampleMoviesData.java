@@ -30,43 +30,53 @@ public class SampleMoviesData {
     }
 
     private String[] titles = {
-            "Leave Company",
-            "Geostorm",
-            "I am Heath Ledger I am",
-            "Kinsman",
-            "Windriver"
+            "Kinsman: The Golden Circle",
+            "Jigsaw",
+            "Blade Runner 2049",
+            "It",
+            "American Made",
+            "The Foreigner",
+            "The LEGO Ninjago Movie"
     };
 
     private String[] description = {
-            "It's been nearly two years since Superman's (Henry Cavill) colossal battle with Zod (Michael Shannon) devastated the city of Metropolis.",
-            "Political pressure mounts to install a system of accountability when the actions of the Avengers lead to collateral damage. The new status quo deeply divides members of the team.",
-            "Worshiped as a god since the dawn of civilization, the immortal Apocalypse (Oscar Isaac) becomes the first and most powerful mutant. Awakening after thousands of years",
-            "Raised by a family of wolves since birth, Mowgli (Neel Sethi) must leave the only home he's ever known when the fearsome tiger Shere Khan (Idris Elba) unleashes his mighty roar",
-            "When Tony Stark (Robert Downey Jr.) jump-starts a dormant peacekeeping program, things go terribly awry, forcing him, Thor (Chris Hemsworth), the Incredible Hulk (Mark Ruffalo) and the rest of the Avengers to reassemble."
+            "When their headquarters are destroyed and the world is held hostage, the Kingsman's journey leads them to the discovery of an allied spy organization in the US. These two elite secret organizations must band together to defeat a common enemy.",
+            "Bodies are turning up around the city, each having met a uniquely gruesome demise. As the investigation proceeds, evidence points to one suspect: John Kramer, the man known as Jigsaw, who has been dead for ten years.",
+            "A young blade runner's discovery of a long-buried secret leads him to track down former blade runner Rick Deckard, who's been missing for thirty years.",
+            "A group of bullied kids band together when a shapeshifting demon, taking the appearance of a clown, begins hunting children.",
+            "The story of Barry Seal, an American pilot who became a drug-runner for the CIA in the 1980s in a clandestine operation that would be exposed as the Iran-Contra Affair.",
+            "A humble businessman with a buried past seeks justice when his daughter is killed in an act of terrorism. A cat-and-mouse conflict ensues with a government official, whose past may hold clues to the killers' identities.",
+            "Shunned by everyone for being the son of an evil warlord, a teenager seeks to defeat him with the help of his fellow ninjas."
     };
 
     private String[] releaseDate = {
-            "Release date: March 25, 2016",
-            "Release date: May 6, 2016",
-            "Release date: May 27, 2016",
-            "Release date: April 15, 2016",
-            "Release date: May 1, 2015"
+            "Release date: Sep 27, 2017",
+            "Release date: Oct 13, 2017",
+            "Release date: Oct 12, 2017",
+            "Release date: Sep 07, 2017",
+            "Release date: Sep 14, 2017",
+            "Release date: Oct 13, 2017",
+            "Release date: Sep 28, 2017"
     };
 
 
     private int cover[] = {
-            R.drawable.exit,
-            R.drawable.geostorm,
-            R.drawable.iam,
             R.drawable.kingsman,
-            R.drawable.windriver
+            R.drawable.jigsaw,
+            R.drawable.bladerunner,
+            R.drawable.it,
+            R.drawable.americanmade,
+            R.drawable.foriener,
+            R.drawable.ninjago
     };
 
     private int background[] = {
-            R.drawable.exit,
-            R.drawable.geostorm,
-            R.drawable.iam,
             R.drawable.kingsman,
-            R.drawable.windriver
+            R.drawable.jigsaw,
+            R.drawable.bladerunner,
+            R.drawable.it,
+            R.drawable.americanmade,
+            R.drawable.foriener,
+            R.drawable.ninjago
     };
 }

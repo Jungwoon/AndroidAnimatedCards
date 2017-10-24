@@ -67,7 +67,7 @@ public class MainPresenter implements MainContract.Presenter, OnItemClickListene
     @Override
     public void loadItems(Context context, boolean isClear) {
 
-        ArrayList<MoviesModel> items = sampleMoviesData.getItems(context, 4);
+        ArrayList<MoviesModel> items = sampleMoviesData.getItems(context, 7);
 
         if (isClear) moviesAdapterModel.clearItem();
 
