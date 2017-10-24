@@ -1,17 +1,35 @@
 package com.byjw.androidanimatedcards;
 
+import android.content.Context;
+
+import com.byjw.androidanimatedcards.Adapter.MoviesModel;
+
+import java.util.ArrayList;
+
 /**
- * Created by jungwoon on 2017. 10. 23..
+ * Created by jungwoon on 2017. 10. 24..
  */
 
-public class DataModel {
+public class SampleMoviesData {
+    private static final SampleMoviesData ourInstance = new SampleMoviesData();
 
-    public static final String BACKGROUND = "background";
-    public static final String COVER = "cover";
-    public static final String TITLE = "title";
-    public static final String DESCRIPTION = "description";
+    public static SampleMoviesData getInstance() {
+        return ourInstance;
+    }
 
-    public static String[] movies = {
+    private SampleMoviesData() {}
+
+    public ArrayList<MoviesModel> getItems(Context context, int size) {
+        ArrayList<MoviesModel> items = new ArrayList<>();
+
+        for (int i = 0; i < size; i++) {
+            items.add(new MoviesModel(cover[i], background[i], titles[i], description[i], releaseDate[i]));
+        }
+
+        return items;
+    }
+
+    private String[] titles = {
             "Leave Company",
             "Geostorm",
             "I am Heath Ledger I am",
@@ -19,7 +37,7 @@ public class DataModel {
             "Windriver"
     };
 
-    public static String[] description = {
+    private String[] description = {
             "It's been nearly two years since Superman's (Henry Cavill) colossal battle with Zod (Michael Shannon) devastated the city of Metropolis.",
             "Political pressure mounts to install a system of accountability when the actions of the Avengers lead to collateral damage. The new status quo deeply divides members of the team.",
             "Worshiped as a god since the dawn of civilization, the immortal Apocalypse (Oscar Isaac) becomes the first and most powerful mutant. Awakening after thousands of years",
@@ -27,7 +45,7 @@ public class DataModel {
             "When Tony Stark (Robert Downey Jr.) jump-starts a dormant peacekeeping program, things go terribly awry, forcing him, Thor (Chris Hemsworth), the Incredible Hulk (Mark Ruffalo) and the rest of the Avengers to reassemble."
     };
 
-    public static String[] releaseDate = {
+    private String[] releaseDate = {
             "Release date: March 25, 2016",
             "Release date: May 6, 2016",
             "Release date: May 27, 2016",
@@ -36,7 +54,7 @@ public class DataModel {
     };
 
 
-    public static int cover[] = {
+    private int cover[] = {
             R.drawable.exit,
             R.drawable.geostorm,
             R.drawable.iam,
@@ -44,12 +62,11 @@ public class DataModel {
             R.drawable.windriver
     };
 
-    public static int background[] = {
+    private int background[] = {
             R.drawable.exit,
             R.drawable.geostorm,
             R.drawable.iam,
             R.drawable.kingsman,
             R.drawable.windriver
     };
-
 }

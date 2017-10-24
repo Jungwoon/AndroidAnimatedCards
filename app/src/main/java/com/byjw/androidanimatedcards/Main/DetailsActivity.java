@@ -1,4 +1,4 @@
-package com.byjw.androidanimatedcards;
+package com.byjw.androidanimatedcards.Main;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.byjw.androidanimatedcards.R;
+import com.byjw.androidanimatedcards.Util.Common;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,7 +44,17 @@ public class DetailsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
+        setCardSwayAnimation();
 
+        Glide.with(this).load(intent.getIntExtra(Common.BACKGROUND, 1)).into(background);
+        Glide.with(this).load(intent.getIntExtra(Common.COVER, 1)).into(cover);
+
+        title.setText(intent.getStringExtra(Common.TITLE));
+        description.setText(intent.getStringExtra(Common.DESCRIPTION));
+
+    }
+
+    private void setCardSwayAnimation() {
         //These are lines helping Details_Card To Animate
         //===============================================
         AnimatorSet animationSet = new AnimatorSet();
@@ -63,11 +75,5 @@ public class DetailsActivity extends AppCompatActivity {
 
         animationSet.playTogether(card_y, cover_y);
         animationSet.start();
-
-        Glide.with(this).load(intent.getIntExtra(DataModel.BACKGROUND, 1)).into(background);
-        Glide.with(this).load(intent.getIntExtra(DataModel.COVER, 1)).into(cover);
-        title.setText(intent.getStringExtra(DataModel.TITLE));
-        description.setText(intent.getStringExtra(DataModel.DESCRIPTION));
-
     }
 }
