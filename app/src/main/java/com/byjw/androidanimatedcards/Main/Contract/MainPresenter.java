@@ -13,7 +13,6 @@ import com.byjw.androidanimatedcards.Adapter.Contract.MoviesAdapterContract;
 import com.byjw.androidanimatedcards.Adapter.MoviesModel;
 import com.byjw.androidanimatedcards.Listener.OnItemClickListener;
 import com.byjw.androidanimatedcards.Main.DetailsActivity;
-import com.byjw.androidanimatedcards.Main.MainActivity;
 import com.byjw.androidanimatedcards.SampleMoviesData;
 import com.byjw.androidanimatedcards.Util.Common;
 
@@ -93,8 +92,4 @@ public class MainPresenter implements MainContract.Presenter, OnItemClickListene
 
     }
 
-    @Override
-    public void onLongClickListener() {
-
-    }
 }

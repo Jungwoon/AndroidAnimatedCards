@@ -10,5 +10,4 @@ public interface OnItemClickListener {
 
     void onClickListener(int position, View view);
 
-    void onLongClickListener();
 }

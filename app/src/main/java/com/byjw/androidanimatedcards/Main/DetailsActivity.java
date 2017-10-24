@@ -4,15 +4,24 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.byjw.androidanimatedcards.R;
 import com.byjw.androidanimatedcards.Util.Common;
 
@@ -36,6 +45,9 @@ public class DetailsActivity extends AppCompatActivity {
     @BindView(R.id.txt_description_details)
     TextView description;
 
+    @BindView(R.id.layout)
+    RelativeLayout layout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,20 +55,41 @@ public class DetailsActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         ButterKnife.bind(this);
 
-        Intent intent = getIntent();
         setCardSwayAnimation();
+        setResources();
 
-        Glide.with(this).load(intent.getIntExtra(Common.BACKGROUND, 1)).into(background);
-        Glide.with(this).load(intent.getIntExtra(Common.COVER, 1)).into(cover);
+    }
+
+    private void setResources() {
+        Intent intent = getIntent();
 
         title.setText(intent.getStringExtra(Common.TITLE));
         description.setText(intent.getStringExtra(Common.DESCRIPTION));
 
+        Glide.with(this).load(intent.getIntExtra(Common.BACKGROUND, 1)).into(background);
+        Glide.with(this).load(intent.getIntExtra(Common.COVER, 1)).into(cover);
+        Glide.with(this)
+            .asBitmap()
+            .load(intent.getIntExtra(Common.BACKGROUND, 1))
+            .apply(new RequestOptions().centerCrop())
+            .into(new SimpleTarget<Bitmap>(getDisplayMetrics().widthPixels, getDisplayMetrics().heightPixels) {
+                @Override
+                public void onResourceReady(Bitmap resource, Transition<? super Bitmap> transition) {
+                    Drawable drawable = new BitmapDrawable(resource);
+                    layout.setBackground(drawable);
+                }
+        });
+    }
+
+    @NonNull
+    private DisplayMetrics getDisplayMetrics() {
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        return displayMetrics;
     }
 
     private void setCardSwayAnimation() {
-        //These are lines helping Details_Card To Animate
-        //===============================================
+
         AnimatorSet animationSet = new AnimatorSet();
 
         //Translating Details_Card in Y Scale

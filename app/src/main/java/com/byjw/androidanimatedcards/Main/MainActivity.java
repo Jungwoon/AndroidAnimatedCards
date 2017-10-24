@@ -1,12 +1,9 @@
 package com.byjw.androidanimatedcards.Main;
 
-import android.app.ActivityOptions;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Pair;
-
 import com.byjw.androidanimatedcards.Adapter.MoviesAdapter;
 import com.byjw.androidanimatedcards.Main.Contract.MainContract;
 import com.byjw.androidanimatedcards.Main.Contract.MainPresenter;
