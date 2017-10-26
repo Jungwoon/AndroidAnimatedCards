@@ -2,8 +2,8 @@
 
 카드뷰를 활용한 애니메이션 샘플
 
-### Sample
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tZkd6fX50H0" frameborder="0" gesture="media" allowfullscreen></iframe>
+### Animation
+[확인하러 가기](https://youtu.be/tZkd6fX50H0)
 
 ### Screenshot
 ![](https://cdn-images-1.medium.com/max/600/1*XWikrZdRbQNDQA0TueH87Q.png)
