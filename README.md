@@ -3,7 +3,7 @@
 카드뷰를 활용한 애니메이션 샘플
 
 ### Sample
-![](https://cdn-images-1.medium.com/max/800/1*_dRNhCSwBZVjDBZFdT8C6w.gif)
+<a href="https://imgflip.com/gif/1y9wjv"><img src="https://i.imgflip.com/1y9wjv.gif" title="made at imgflip.com"/></a>
 
 ### Screenshot
 ![](https://cdn-images-1.medium.com/max/600/1*XWikrZdRbQNDQA0TueH87Q.png)
